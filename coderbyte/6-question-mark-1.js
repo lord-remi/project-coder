@@ -36,13 +36,19 @@ function QuestionsMarks(str) {
         }
     }
 
-    console.log(validateNum)
     for (a = 0; a < validateNum.length; a++) {
-        if (validateNum[a] + validateNum[a + 1] <= 10) {
-
+        let validateArray = validateNum.slice([a])
+        console.log("validateArray", validateArray)
+        for (b = 0; b < validateArray.length; b++) {
+            if (Number(validateNum[a]) + Number(validateArray[b]) <= 10) {
+                console.log((input.indexOf(validateNum[a])), input.indexOf(validateArray[b]))
+                let questionMarkCheckArray = input.slice(input.indexOf(validateNum[a], input.indexOf(validateArray[b])))
+                console.log(questionMarkCheckArray)
+            } else {
+                console.log(false)
+            }
         }
     }
-
 }
 
 // QuestionsMarks("aa6?9")
@@ -53,3 +59,12 @@ QuestionsMarks("acc?7??sss?3rr1??????5")
 // turn 2 -   3 1 5 7
 // turn 3 -     1 5 7 3 
 // turn 4 -       5 7 3 1
+
+// [ '7', '3', '1', '5' ]
+// 7 + 3 | 7 + 1 | 7 + 5   
+// 3 + 1 | 3 + 5           
+// 1 + 5                   
+
+// >>> x1 + x2 | x1 + x3 | x1 + x4
+// >>> x2 + x3 | x2 + x4
+// >>> x3 + x4
