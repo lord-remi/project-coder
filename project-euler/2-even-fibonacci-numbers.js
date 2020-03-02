@@ -6,9 +6,22 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, 
 // find the sum of the even-valued terms.
 
+// Condition 1
 // 0 + 1 = 1
 // 1 + 1 = 2
 // 1 + 2 = 3
 // 2 + 3 = 5
 // 3 + 5 = 8
 // 5 + 8 = 13
+// ....
+
+// Condition 2
+// even-valued >>> num % 2
+
+let fibonacciNum = 1;
+let result = 0;
+result = fibonacciNum + fibonacciNum
+console.log(result)
+
+fibonacciNum = fibonacciNum + result
+console.log(fibonacciNum)
