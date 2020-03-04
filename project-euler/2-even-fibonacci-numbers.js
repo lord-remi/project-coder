@@ -18,10 +18,48 @@
 // Condition 2
 // even-valued >>> num % 2
 
-let fibonacciNum = 1;
-let result = 0;
-result = fibonacciNum + fibonacciNum
-console.log(result)
+// let firstFi = 1;
+// let nextFi = 2;
+// let result;
 
-fibonacciNum = fibonacciNum + result
-console.log(fibonacciNum)
+// function FindFibonnaci() {
+//     result = firstFi + nextFi;
+//     firstFi = nextFi
+//     nextFi = result
+//     console.log(result)
+// }
+
+// FindFibonnaci()
+
+let arrayFi = [1, 2]
+
+for (a = 0; a < 100; a++) {
+    function FindFibonnaci() {
+        let sum;
+        sum = arrayFi[0] + arrayFi[1]
+        arrayFi.push(sum)
+    }
+    FindFibonnaci()
+
+    arrayFi.sort(function(a, b) {
+        return b - a
+    })
+
+    if ((arrayFi.reduce((a, b) => a + b)) >= 4000000) {
+        arrayFi.splice(0, 1)
+        console.log((arrayFi.reduce((a, b) => a + b)))
+        break
+    }
+}
+console.log(arrayFi)
+
+for (b = 0; b < arrayFi.length; b++) {
+    if (arrayFi[b] % 2 == 0) {
+        arrayFi.splice(b, 1)
+    }
+}
+
+console.log("even-value array", arrayFi)
+console.log("sum of even-value terms", (arrayFi.reduce((a, b) => a + b)))
+
+
