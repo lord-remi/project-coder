@@ -33,7 +33,7 @@
 
 let arrayFi = [1, 2]
 
-for (a = 0; a < 100; a++) {
+for (let a = 0; a < 100; a++) {
     function FindFibonnaci() {
         let sum;
         sum = arrayFi[0] + arrayFi[1]
@@ -47,19 +47,19 @@ for (a = 0; a < 100; a++) {
 
     if ((arrayFi.reduce((a, b) => a + b)) >= 4000000) {
         arrayFi.splice(0, 1)
-        console.log((arrayFi.reduce((a, b) => a + b)))
+        // console.log((arrayFi.reduce((a, b) => a + b)))
         break
     }
 }
-console.log(arrayFi)
+// console.log(arrayFi)
 
-for (b = 0; b < arrayFi.length; b++) {
+let evenTermSum = 0;
+for (let b = 0; b < arrayFi.length; b++) {
     if (arrayFi[b] % 2 == 0) {
-        arrayFi.splice(b, 1)
+        evenTermSum = evenTermSum + arrayFi[b]
     }
 }
-
-console.log("even-value array", arrayFi)
-console.log("sum of even-value terms", (arrayFi.reduce((a, b) => a + b)))
+console.log("evenTermSum", evenTermSum)
+// console.log("Fibonacci array", arrayFi)
 
 

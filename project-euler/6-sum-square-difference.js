@@ -20,7 +20,7 @@ for (a = 0; a < numArr.length; a++) {
 }
 
 let squareOfSum = 0;
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
+const reducer = (a, b) => a + b;
 squareOfSum = numArr.reduce(reducer)
 squareOfSum = Math.pow(squareOfSum, 2)
 

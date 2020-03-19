@@ -23,8 +23,8 @@ function FindIntersection(strArr) {
       for (b = 0; b < array2.length; b++) {
         if (array2[b] === array1[a]) {
           returnarray.push(array2[b])
-          array2.splice(b, 1)
-          break
+          // array2.splice(b, 1)
+          // break 
         }
       }
     }

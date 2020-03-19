@@ -8,29 +8,28 @@
 // Input: "fun times!"
 // Output: gvO Ujnft!
 
-
 function LetterChanges(str) {
     let input = str;
     let alphabet = "abcdefghijklmnopqrstuvwxyz";
     let vowels = "aiueo";
-    let returnarray = [];
+    let output = input;
 
-    for (let b = 0; b < input.length; b++) {
-        for (let a = 0; a < alphabet.length; a++) {
-            if (input[b] == alphabet[a]) {
+    for (let a = 0; a < alphabet.length; a++) {
+        if (input.includes(alphabet[a])) {
+            if (alphabet[a + 1] == undefined) {
+                output = output.replace(new RegExp(alphabet[a], 'g'), alphabet[0].toUpperCase())
+            } else {
+                output = output.replace(new RegExp(alphabet[a], 'g'), alphabet[a + 1])
                 if (vowels.includes(alphabet[a + 1])) {
-                    returnarray.push(alphabet[a + 1].toUpperCase())
-                } else {
-                    returnarray.push(alphabet[a + 1])
-                }
-            } else if (input[b] === alphabet[25]) {
-                returnarray.push(alphabet[26])
+                    output = output.replace(new RegExp(alphabet[a + 1], 'g'), alphabet[a + 1].toUpperCase())
+                } 
             }
         }
     }
 
-    console.log(returnarray.join(""))
+    console.log(output)
 }
 
 LetterChanges("hello*3")
+LetterChanges("zoo")
 LetterChanges("fun times!")

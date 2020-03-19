@@ -9,11 +9,14 @@
 // Output: ahhloop
 
 function AlphabetSoup(str) {
-    let input = str;
-    let array = input.split("")
+    return str.split("").sort().join("")
+    // let input = str;
+    // let array = input.split("").sort().join("")
 
-    array.sort() 
-    console.log(array.join(""))
+    // console.log(array)
+    // array.sort() 
+    // console.log(array.join(""))
+    // return output
 }
 
 AlphabetSoup("coderbyte")
